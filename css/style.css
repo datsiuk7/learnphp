@@ -1,0 +1,14 @@
+
+.menupages{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.menupages > a{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #03A062;
+    padding-top: 10px;
+}
