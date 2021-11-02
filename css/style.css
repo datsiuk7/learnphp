@@ -1,4 +1,6 @@
-
+.footerhr{
+    margin-top: 150px;
+}
 .menupages{
     display: flex;
     justify-content: space-around;

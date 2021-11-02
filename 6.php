@@ -9,7 +9,11 @@
     <body>
 
     <div id="app">
-        <button v-on:mouseover="show">Нажми на меня</button>
+        <button v-on:click="addItem">Добавить</button>
+
+        <ul>
+            <li v-for="item in items">{{ item }}</li>
+        </ul>
     </div>
 
 
@@ -17,13 +21,15 @@
     let app = new Vue({
         el: '#app',
         data: {
-            num1: 1,
-            num2: 2,
-            num3: 3,
+            items: ['1', '2', '32', '4', '51'],
         },
         methods: {
-            show: function () {
-                alert(this.num1+this.num2+this.num3);
+            addItem: function() {
+                this.items = this.items.filter(function(elem) {
+                    if (elem >= 0 && elem <= 10) {
+                        return elem;
+                    }
+                });
             }
         }
     });

@@ -8,24 +8,23 @@
     </head>
     <body>
 
+
     <div id="app">
-        <button v-on:mouseover="show">Нажми на меня</button>
+        <p v-bind:class="classes">Абзац</p>
     </div>
 
 
     <script>
-    let app = new Vue({
-        el: '#app',
-        data: {
-            num1: 1,
-            num2: 2,
-            num3: 3,
-        },
-        methods: {
-            show: function () {
-                alert(this.num1+this.num2+this.num3);
-            }
-        }
-    });
+        let app = new Vue({
+            el: '#app',
+            data: {
+                isActive: false,
+                classes: {
+                    active: true,
+                    valid: true,
+                    warning: false,
+                }
+            },
+        });
     </script>
 <?php include "parts/footer.php"; ?>
