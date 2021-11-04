@@ -16,6 +16,7 @@
             'Vue class',
             'Vue game 1-100',
             'Vue workers',
+            'Vue table',
         ];
         while($i <= $end){
             $names = "Link".$i;
