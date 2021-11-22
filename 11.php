@@ -23,7 +23,6 @@
             data: {
                 magic: 20,
                 num: 0,
-                str:''
             }
         });
     </script>
