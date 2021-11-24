@@ -1,0 +1,306 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #8bbcc5;
+
+}
+
+.main {
+  margin-top: 50px;
+  min-height: calc(100vh - 150px);
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  margin-top: 50px;
+  width: 75%;
+  flex-wrap: wrap;
+  background-color: #35b5cd8f;
+  border-radius: 2%;
+
+}
+
+article {
+  width: 25%;
+  /* border: 1px solid red; */
+}
+
+.block {
+  padding: 10px;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.foto, .info {
+  width: 50%;
+  margin: 0 10px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info>.header {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.info>.header>button {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.info>.price {
+  /* border: 1px solid red; */
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.info>.text {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.5em;
+}
+
+.info .priceValue {
+  font-size: 3em;
+}
+
+.info .city {
+  font-size: 2em;
+}
+
+.mainfoto {
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.mainfoto>img, .thumbs>img {
+  margin: 0 auto;
+}
+
+.bottomfoto {
+  margin-top: 15px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.thumbs {
+  width: 30%;
+  /* border: 1px solid red; */
+}
+
+.mainbottom {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2em;
+}
+
+.mainbottom>.left .right {
+  width: 50%;
+}
+
+.mainbottom .bold {
+  font-weight: bold;
+}
+button>a{
+  color: white;
+}
+button.button4 {
+  position: relative;
+  display: inline-block;
+  font-family: Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: rgb(245, 245, 245);
+  text-shadow: 0 -1px rgba(0, 0, 0, .1);
+  text-decoration: none;
+  user-select: none;
+  padding: .3em 1em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background: #0c629f linear-gradient(#00ffb8, #0c9c95);
+  box-shadow: inset #26debc 0 -1px 1px, inset 0 1px 1px #00ff95, #3c77aa 0 0 0 1px, rgb(0 0 0 / 30%) 0 2px 5px;
+  -webkit-animation: pulsate 1.2s linear infinite;
+  animation: pulsate 1.2s linear infinite;
+}
+
+button.button4:hover {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+button.button4:active {
+  top: 1px;
+  color: #fff;
+  text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, .3), 0 1px 1px #fff, inset 0 1px 2px rgba(0, 0, 0, .8), inset 0 -1px 0 rgba(0, 0, 0, .05);
+}
+
+@-webkit-keyframes pulsate {
+  50% {
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+  }
+}
+
+@keyframes pulsate {
+  50% {
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+  }
+}
+
+#modal {
+  font-size: 1.5em;
+  width: 800px;
+  height: 350px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #8bbcc5;
+  color: white;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+#modal:target {
+  display: block;
+  box-shadow: rgba(0, 0, 0, 1) 13px 20px 20px -20px;
+}
+
+.close {
+  color: white;
+}
+
+.close:hover {
+  color: #26debc;
+}
+
+nav{
+  display: flex;
+    margin-top: 50px;
+    width: 25%;
+    margin-left: 20px;
+    flex-wrap: nowrap;
+    border-radius: 30px;
+    background-color: #c5b8ac;
+    flex-wrap: wrap;
+}
+nav > div{
+  color: red;
+  width: 100%;
+  display: flex;
+}
+nav div > img{
+  height: 100%;
+}
+header{
+  display: flex;
+}

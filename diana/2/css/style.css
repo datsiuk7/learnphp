@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  display: block;
+  max-width: 100%;
+  color: white;
+}
+
+body {
+  background-color: #d3d6e0;
+}
+
+.main {
+  margin-top: 50px;
+  min-height: calc(100vh - 150px);
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.main, main {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  margin-top: 50px;
+  width: 75%;
+  flex-wrap: wrap;
+  background-color: #c5b8ac;
+}
+
+.block {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.foto, .info {
+  width: 50%;
+  margin: 0 10px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info>.header {
+  width: 45%;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.info>.price {
+  width: 45%;
+  padding-top: 70px;
+  text-align: center;
+}
+
+.info>.text {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.5em;
+}
+
+.info .priceValue {
+  font-size: 3em;
+}
+
+.info .city {
+  font-size: 2.5em;
+}
+
+.bigfoto {
+  width: 100%;
+}
+
+.bigfoto>img, .minfoto>img {
+  margin: 0 auto;
+}
+
+.bottomfoto {
+  margin-top: 15px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.minfoto {
+  width: 30%;
+}
+
+.mainbottom {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2em;
+}
+
+.mainbottom>.left .right {
+  width: 50%;
+}
+
+.mainbottom .bold {
+  font-weight: bold;
+}
+
+.info>.header>button {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: rgba(223, 190, 170, 1);
+  box-shadow: rgba(0, 0, 0, .5) 3px 10px 10px -10px;
+  font-size: 1.5em;
+}
+
+button.button:active {
+  top: 10px;
+}
+
+#modal {
+  font-size: 1.5em;
+  width: 600px;
+  height: 250px;
+  text-align: center;
+  padding: 15px;
+  border: 3px solid #0000cc;
+  border-radius: 10px;
+  background-color: #c5b8ac;
+  color: #0000cc;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+#modal:target {
+  display: block;
+  box-shadow: rgba(0, 0, 0, 1) 13px 20px 20px -20px;
+}
+
+.close {
+}
+
+.close:hover {
+  color: gray
+}
+
+nav{
+  display: flex;
+    margin-top: 50px;
+    width: 25%;
+    margin-left: 20px;
+    flex-wrap: nowrap;
+    background-color: #c5b8ac;
+    flex-wrap: wrap;
+}
+nav > div{
+  color: red;
+  width: 100%;
+  display: flex;
+  background-color: orange;
+}
+nav div > img{
+  height: 100%;
+}
+header{
+  display: flex;
+}
