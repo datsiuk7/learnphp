@@ -136,6 +136,7 @@ function create() {
     var element = document.getElementById("img");
     var text = '<img src="'+img+'"/>';
     element.innerHTML = text;
+    element.innerHTML  += '<br><a download="block.png" href="'+img+'">Завантажити фото</a>';
 
   });
 }
