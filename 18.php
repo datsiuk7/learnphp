@@ -5,6 +5,10 @@
     <title>HTML5</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
@@ -26,6 +30,12 @@
         .text{
           width: 150px;
         }
+        canvas{
+          display: none;
+        }
+        #generate{
+          width: 200px;
+        }
 
     </style>
 </head>
@@ -33,7 +43,7 @@
 <div id="app">
 
     <div class="main">
-        <div class="box" v-bind:style="{
+        <div id="block" class="box" style="font-family: 'courier new'" v-bind:style="{
          backgroundColor: backgroundColor,
          color:color,
          height: height*10+'px',
@@ -43,7 +53,9 @@
         'border-bottom-left-radius':borderradiuslb+'px',
         'border-top-right-radius':borderradiusrt+'px',
         'border-bottom-right-radius':borderradiusrb+'px',
-        'font-size': fontsize+'px'
+        'font-size': fontsize+'px',
+        'margin-left': movex+'%',
+        'margin-top': movey+'%'
       }">{{text}}</div>
     </div>
     <br>
@@ -64,7 +76,22 @@
     <hr>
     текст: <input class="text" v-model="text" type="text">
     висота тексту: <input v-model="fontsize" type="number">
+    <br>
+    <br>
+    Перемістити по осі X: <input v-model="movex" type="number">
+    Перемістити по осі Y: <input v-model="movey" type="number">
 
+
+</div>
+<hr>
+<!-- <input type="button" id="generate"  onclick="create()" value="Згенерувати картинку"> -->
+<hr>
+<p>Ваша картинка знизу</p>
+<div id="img">
+  Тут буде ваша картинка
+</div>
+<div id="canvashide">
+  <canvas id="canvas" width="300" height="300"></canvas>
 </div>
 <script>
     let app = new Vue({
@@ -81,6 +108,8 @@
                 bordercolor:"",
                 text:"Привіт світе!",
                 fontsize:15,
+                movex:0,
+                movey:0,
             },
             methods: {
                 colors() {
@@ -90,5 +119,26 @@
         })
     ;
 </script>
+<script type="text/javascript">
+function create() {
+  var parent = document.getElementById("canvashide");
+  var child = document.getElementsByTagName("canvas")[0];
+  parent.removeChild(child);
 
+
+  let count = 0;
+  html2canvas(document.querySelector("#block")).then(canvas => {
+    var node = document.getElementById("canvashide");
+    node.appendChild(canvas);
+    document.body.appendChild(node);
+    var canvas = document.getElementsByTagName("canvas")[0];
+    var img = canvas.toDataURL("image/png");
+    var element = document.getElementById("img");
+    var text = '<img src="'+img+'"/>';
+    element.innerHTML = text;
+
+  });
+}
+let timerId = setInterval(() => create(), 1000);
+</script>
 </div><?php include "parts/footer.php"; ?>
